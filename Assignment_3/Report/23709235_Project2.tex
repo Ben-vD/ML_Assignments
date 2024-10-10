@@ -33,6 +33,160 @@ Stellenbosch, South Africa \\
 \section{Introduction}
 
 
+\section{Backround}
+
+    \subsection{Ensemble Learning}
+
+
+    \subsection{Decion Trees}
+
+        A decision tree (DT) is a tree structure which can be recursively defined and consists of both leaf nodes
+        and internal nodes (decision nodes). Leaf nodes (terminal nodes) contain the predicted outcomes and each internal
+        node denotes a test on a feature, with branches to lower nodes (child nodes) that represent the outcomes of the
+        test \cite{DT_Rokach2010, GavinPotgieter}. When the target variable is nominal, the DT is referred to as a classification
+        tree, and when the target variable is numerical, the DT is referred to a regression tree \cite{DT_Kotsiantis2013, DT_Blockeel2023}.
+
+        DT induction is a supervised machine learning approach that can be used for classification as well as regression problems.
+        Learning in the context of DTs refers to the induction algorithm used to construct the DT from a set of observations.
+        The first regression tree algorithm, qutomatic interaction detection (AID), was published in 1963 \cite{DT_Morgan1963ProblemsIT}.
+        DTs became notably prominent in the 1980s when several induction algorithms were developed \cite{DT_Kotsiantis2013}. Some popular
+        algorithms include  CHAID \cite{DT_Kass1980}, CART \cite{DT_breiman1984classification}, ID3 \cite{DT_quinlan1986}, and C4.5 \cite{DT_quinlan1993}.
+        
+        The ID3 \cite{DT_quinlan1986} builds the tree recursively, starting at the root node. Next, the feature that best
+        seperates the data is selected. The feature is selected by computing the information gain (IG) of all the features.
+        The feature that results in the largest IG is then used as the test to seperate the data.
+        This process of finding the best split for the data at each given internal node continuous untill all the instances
+        in a data partition have the same target label. When this condition is met, a leaf node is created.
+
+        The ID3 algorithm utilizes entropy to calculate the IG. Entropy is defined as
+
+        \begin{equation}
+            Entropy(D) = - \sum_{i=1}^{N} p_i \log_2(p_i)
+        \end{equation}
+                
+        where $p_{i}$ is the probability of an instance belonging to class $c_{i}$ at the current node, for the current
+        data partition. The information gain is calcualted as
+
+        \begin{equation}
+            \text{IG}(A) = \text{Entropy}(D) - \sum_{j=1}^{d} \frac{|D_i|}{|D|} \text{Entropy}(D_i)
+        \end{equation}
+            
+        where $D$ is the data set, and $A$ a specific attribute. If attribute $A$ has $d$ different outcomes
+        $\{a_1, a_2, ..., a_d\}$, then $D_j$ represents the subset of data that have the outcome $a_j$.
+
+        The main issue of the ID3 algorithm, is that it only works with categorical features. The C4.5 \cite{DT_quinlan1993}
+        and CART \cite{DT_breiman1984classification} algorithms on the other hand are capable of handling both categorical and
+        continuous features.
+
+        The C4.5 is the extention of the ID3 algorithm, and uses the gain ratio as the metric for determining optimal
+        splits. The IG has a bias towords features with many unique values, and the gain ratio addresses
+        this problem by taking the sizes and number of braches into account \cite{Kelleher2015}. The gain ratio is defined as
+
+        \begin{equation}
+            \text{Gain Ratio}(A) = \frac{\text{IG}(A)}{\text{SI}(A)}
+        \end{equation}
+            
+        where SI, the split information, is given by
+
+        \begin{equation}
+            \text{SI}(A) = - \sum_{i=j}^{d} \frac{|D_j|}{|S|} \log_2 \left( \frac{|D_j|}{|D|} \right)
+        \end{equation}
+            
+        The CART algorithm \cite{DT_breiman1984classification} on the other hand uses the gini index to determine
+        the optimal split. In addition the CART algorithm constructs only binary decision trees, i.e., each internal
+        node only has two children nodes. The Gini index is given by 
+
+        \begin{equation}
+            \text{Gini Index}(D) = 1 - \sum_{i=1}^{N} P_i^2
+        \end{equation}
+            
+        where $P_i = \frac{|C_i|}{|D|}$. The number of instances in $D$ is given by $|D|$, and $C_i$
+        is the number if instances relative to class $C_i$.
+
+        Decsion trees are often prone to overfitting, especiallywhen the training data contains noise.
+        One technique to prevent overfitting is tree pruning, whereby subtrees that cause the model to overfit
+        are removed. The easiest way to prune a tree is to use pre-pruning strategies, also known as early stopping.
+        Examples of early stopping criteria include a predefined tree depth, and minimum number of instances to form
+        a leaf node. More complex pre-pruning approached, for exmaple $\chi^2$ pruning uses statistical tests
+        to determine the importance of subtrees. The problem with pre-runing strategies is that
+        that they often miss potentially good splits due to the nature of early stopping \cite{Kelleher2015}.
+
+        An alternative approach is to use post-pruning, which allows the tree to grow to completion. Each branch in the
+        tree is subsequently analysed. Branches that likely cause overfitting are removed. A common method is
+        cost-complexity-pruning \cite{Breiman1984}, which assigns a cost to each subtree, and removing those with the lowest cost.
+        The cost is calcualted as
+
+        \begin{equation}
+            C_\alpha(T) = R(T) + \alpha |T|
+        \end{equation}
+            
+        where $C_\alpha(T)$ and $R(T)$ is the cost-complexity and misclassification rate of subtree $T$. The number of leaf nodes
+        of $T$ is given by $|T|$. The complexity parameter $\alpha$ determines how much the tree is penalized. An increase in
+        $\alpha$ results in more of the tree being pruned. Another popular approach is reduced error pruning, proposed by 
+        Quinlan \cite{DT_quinlan1993} in 1993, which prunes based on error rates.
+
+    \subsection{Random Forests}
+
+
+
+\section{Implementation}
+
+    
+
+\section{Empirical Procedure}
+
+
+    \subsection{Datasets}
+
+    \begin{itemize}
+        \item \textbf{Iris}: Possibly the most commonly used benchmark dataset, the Iris dataset contains 150 samples, 
+        described by four continuous features. The target variable is comprised of three classes, which represent the 
+        type of iris plant, namely Setosa, Versicolour, and Virginica. The distribution of the classes is uniform, i.e., 
+        each class occurs 50 times.
+        
+        \item \textbf{Breast Cancer}: The Breast Cancer dataset is a popular dataset in the field of machine learning and 
+        biomedical research. It contains data collected from 569 breast cancer patients, each represented by 30 features 
+        that describe various characteristics of cell nuclei extracted from breast mass biopsies. The dataset is a binary 
+        classification problem, with classes 0 and 1 representing benign (non-cancerous) and malignant (cancerous) respectively. 
+        Of the 569 samples, 357 instances are malignant, and 212 benign.
+        
+        \item \textbf{Wine Recognition Data}: The Wine recognition dataset consists of 178 samples, characterized by 13 
+        continuous features that represent the chemical constituents of wines derived from three different cultivars grown 
+        in the same region of Italy. The dataset is designed for classification tasks, where the target variable represents 
+        three different cultivars. The features include measurements such as alcohol, malic acid, ash, and total phenols. 
+        No missing values are present in the dataset.
+        
+        \item \textbf{Ionosphere}: The Ionosphere dataset is a well-known dataset for classification tasks in the field of 
+        radar signal analysis. It contains 351 instances, each represented by 34 continuous features. The data was collected 
+        using a phased array of 16 high-frequency antennas, stationed in Goose Bay, Labrador, to study radar returns from the 
+        ionosphere. The features describe the autocorrelation function of signals transmitted and received by the antennas, 
+        with each pulse number providing two complex-valued attributes. The target variable is binary, with classes labeled as 
+        "Good" or "Bad." A "Good" radar return indicates evidence of structure in the ionosphere, while a "Bad" return signifies 
+        signals that passed through the ionosphere without detection of such structure.
+        
+        \item \textbf{Optical Recognition of Handwritten Digits}: The Optical Recognition of Handwritten Digits dataset is a 
+        widely used benchmark in the field of machine learning, particularly for digit recognition tasks. It consists of 1,797 
+        instances, each represented by 64 attributes. Each attribute corresponds to an 8x8 pixel image of a handwritten digit, 
+        where pixel values are integers in the range of 0 to 16. This dataset is a subset of the UCI ML hand-written digits datasets, 
+        derived from the National Institute of Standards and Technology (NIST) preprocessing programs, which extracted normalized 
+        bitmaps of handwritten digits from preprinted forms. The digits belong to 10 classes, each representing a digit from 0 to 9.
+    \end{itemize}
+
+
+    \subsection{Statistical Analysis}
+
+        The following statistical analysis procedure was conducted to analyse the overall performance for each of the final expert models
+        obtained, as well as the standard GPDT and BGP algorithm For each of the algorithms the Friedman test, with significance level ($\alpha$) of 0.05,
+        was conducted to determine if any significant dfferences existed between the final mean test accuracies. In the case that the null
+        hypothesis is rejected, the Holm and Nemenyi post-hoc procedures are used to determine which algorithms are significantly different from
+        one another. The Iman-Davenport correction is also aplied to the Friedman test to address overly conservative behaviour.
+
+\section{Results}
+
+
+\section{Conclusion}
+
+
 \bibliography{refs}
 \bibliographystyle{ieeetr}
 
