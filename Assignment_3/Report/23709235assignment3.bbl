@@ -1,0 +1,86 @@
+\begin{thebibliography}{10}
+
+\bibitem{mienye2022survey}
+I.~D. Mienye and Y.~Sun, ``A survey of ensemble learning: Concepts, algorithms,
+  applications, and prospects,'' {\em IEEE Access}, vol.~10, pp.~99129--99149,
+  2022.
+
+\bibitem{naderalvojoud2024improving}
+B.~Naderalvojoud and T.~Hernandez-Boussard, ``Improving machine learning with
+  ensemble learning on observational healthcare data,'' {\em AMIA Annu Symp
+  Proc}, vol.~2023, pp.~521--529, Jan 11 2024.
+
+\bibitem{zhou2021formulating}
+J.~Zhou, Z.~Jiang, F.~L. Chung, and S.~Wang, ``Formulating ensemble learning of
+  svms into a single svm formulation by negative agreement learning,'' {\em
+  IEEE Transactions on Systems, Man, and Cybernetics: Systems}, vol.~51,
+  pp.~6015--6028, Oct 2021.
+
+\bibitem{mishra2022improving}
+S.~Mishra, K.~Shaw, D.~Mishra, S.~Patil, K.~Kotecha, S.~Kumar, and S.~Bajaj,
+  ``Improving the accuracy of ensemble machine learning classification models
+  using a novel bit-fusion algorithm for healthcare ai systems,'' {\em
+  Frontiers in Public Health}, vol.~10, p.~858282, 2022.
+
+\bibitem{sun2021classifier}
+Y.~Sun, Z.~Li, X.~Li, and J.~Zhang, ``Classifier selection and ensemble model
+  for multi-class imbalance learning in education grants prediction,'' {\em
+  Applied Artificial Intelligence}, vol.~35, no.~4, pp.~290--303, 2021.
+
+\bibitem{brown2011ensemble}
+G.~Brown, ``Ensemble learning,'' in {\em Encyclopedia of Machine Learning}
+  (C.~Sammut and G.~I. Webb, eds.), Boston, MA: Springer, 2011.
+
+\bibitem{DT_Rokach2010}
+L.~Rokach and O.~Maimon, {\em Classification Trees}, pp.~149--174.
+\newblock Boston, MA: Springer US, 2010.
+
+\bibitem{GavinPotgieter}
+G.~Potgieter, ``Mining continuous classes using evolutionary computing,''
+  Master's thesis, University of Pretoria, 2006.
+
+\bibitem{DT_Kotsiantis2013}
+S.~B. Kotsiantis, ``Decision trees: a recent overview,'' {\em Artificial
+  Intelligence Review}, vol.~39, pp.~261--283, 2013.
+
+\bibitem{DT_Blockeel2023}
+H.~Blockeel, L.~Devos, B.~Frénay, G.~Nanfack, and S.~Nijssen, ``Decision
+  trees: From efficient prediction to responsible ai,'' {\em Frontiers in
+  Artificial Intelligence}, 2023.
+
+\bibitem{DT_Morgan1963ProblemsIT}
+J.~N. Morgan and J.~A. Sonquist, ``Problems in the analysis of survey data, and
+  a proposal,'' {\em Journal of the American Statistical Association}, vol.~58,
+  pp.~415--434, 1963.
+
+\bibitem{DT_Kass1980}
+G.~V. Kass, ``An exploratory technique for investigating large quantities of
+  categorical data,'' {\em Journal of the Royal Statistical Society: Series C
+  (Applied Statistics)}, vol.~29, no.~2, pp.~119--127, 1980.
+
+\bibitem{DT_breiman1984classification}
+L.~Breiman, J.~Friedman, C.~Stone, and R.~Olshen, {\em Classification and
+  Regression Trees}.
+\newblock Taylor \& Francis, 1984.
+
+\bibitem{DT_quinlan1986}
+J.~R. Quinlan, ``Induction of decision trees,'' {\em Machine Learning}, vol.~1,
+  pp.~81--106, 1986.
+
+\bibitem{DT_quinlan1993}
+J.~Quinlan, {\em C4.5: Programs for Machine Learning}.
+\newblock Morgan Kaufmann series in machine learning, Elsevier Science, 1993.
+
+\bibitem{Kelleher2015}
+J.~D. Kelleher, B.~MacNamee, and A.~D’Arcy, {\em Fundamentals of Machine
+  Learning for Predictive Data Analytics: Algorithms, Worked Examples, and Case
+  Studies}.
+\newblock Cambridge, Massachusetts: The MIT Press, 2015.
+\newblock Print.
+
+\bibitem{Breiman1984}
+L.~Breiman, J.~H. Friedman, R.~A. Olshen, and C.~J. Stone, {\em Classification
+  and Regression Trees}.
+\newblock Wadsworth International Group, 1984.
+
+\end{thebibliography}
