@@ -42,14 +42,31 @@ Stellenbosch, South Africa \\
     EL methods can reduce bias and variance using methods such as bagging and boosting. 
     
     One of the most commonly used EL approaches the the Random Forest (RF) algorithm. RF is a supervised learning algorithm, and
-    can be used for both regression and classification tasks. 
+    can be used for both regression and classification tasks. The algorithm uses a combination of decsion trees (DTs) as base learners,
+    each of which is trained on a subset of the data. In addition, RF is considered a homogeneous ensemble, since all the
+    individual learners that make up the ensemble employ the same ML model.
 
+    As with any ML algorithm, selecting the appropriate hyper-parameters forms a critical part of optimizing the performance
+    RF. The most commen parameters inclyde, number of trees, number of features and samples for each DT, and maximum depth
+    of trees. Several studies have explored the effect that the number of trees has on the overall performance of RF
+    \cite{banfeld2007comparison,hernandezlobato2013large,oshiro2012how}. Furthermore, sensitivity analysis of the various
+    parameters have also been conducted \cite{probst2018tune,freeman2015random,huang2016parameter}.
 
-    The remainder of the paper is structured as follows:
+    The main objective of this study is to further explore the effect of maximum tree depth, as well as the impact
+    of the number of randomly selected features when deciding on a node split. The RF algorithm is applied to five classification
+    problems of various complexity. The aim is to investigate the the performance of the RF where individual ensemble members
+    underfit on the training data, and moving to a RF where the members each overfit the data. The relationship between the maximum
+    depth and the number of trees used is also analyzed
 
-\section{Backround}
+    The remainder of the paper is structured as follows: Section \ref{Backround} gives and overview of ensemble learning,
+    DTs, and RFs. Section \ref{Implementation} describes the RF implementation employed in this study. Next, Section \ref{Empirical-Procedure}
+    describes the experimental procedure and statistical analysis conducted. The results are presented in Section \ref{Results}, and final
+    remarks and future prospects is given in Section \ref{Conclusion}.
+
+\section{Backround} \label{Backround}
 
     \subsection{Ensemble Learning}
+
 
 
     \subsection{Decion Trees}
@@ -141,14 +158,20 @@ Stellenbosch, South Africa \\
 
     \subsection{Random Forests}
 
+        RFs became notably prominent after the work done by Breiman in 2001 \cite{breiman2001random}, in which he proposed
+        proposed the RF algorithm. Breiman was highly influenced by the work of Amit and Geman \cite{amit1997shape}, who propsed the ``randomized trees'',
+        method, as well as ``random decision forests'' introduced by Ho in 1995. The original RF algorithm \cite{breiman2001random}
+        utilizes the CART algorithm for each DT, and the datasets for each DT is constructed using bootstrap samples. The Gini index
+        is used as the criteria for determining optimal node splits, and at each split, only a subset of randomly selected features are considered.
+        When applied to classification tasks, the most common procedure for combining the results of the DTs is majority voting \cite{SUN2024121549}.
+        
 
+\section{Implementation} \label{Implementation}
 
-\section{Implementation}
-
+    This study utilizes the scikit-learn \cite{scikit-learn} random forest classifier
     
 
-\section{Empirical Procedure}
-
+\section{Empirical Procedure} \label{Empirical-Procedure}
 
     \subsection{Datasets}
 
@@ -187,6 +210,21 @@ Stellenbosch, South Africa \\
     \end{itemize}
 
 
+    \subsection{Performance Analysis}
+
+        The initial analysis explores the effect of the maximum tree depth hyper-parameter on the overall performance of the RF algorithm
+        for the respective datasets. All other parameters, namely the number of decsion trees in the RF, number of features used for determining optimal
+        split, and bag size, are fixed. For each value of maximum tree depth explored, a total of 30 experiments are run, after which the average out
+        of bag score is used to evaluate each model. The minimum tree depth is simply set to one, which is the smallest possible tree. However, selecting
+        the maximum tree depth is more challenging, since it has no upper bound. For each dataset, a simple early stopping condition is used.
+        If the performance does not increase for five consecutive increments of maximum depth, then stop. The value obtained from the stopping
+        criteria is simply rounded up to the nearest five. Lastly, the number of features for deciding on the optimal split is set to the square
+        root of the number of features present in the respective datasets \cite{hastie2001elements}.
+
+        The next analysis looks at the relationship between the maximum tree depth and the number of DTs in the RF. The same range for maximum
+        tree depth is used as described for the initial analysis. For each value of maximum depth, different values for the number of DT are explored,
+        starting at 20, and incrementing with step sizes of 20 up to 200. 
+
     \subsection{Statistical Analysis}
 
         The following statistical analysis procedure was conducted to analyse the overall performance for each of the final expert models
@@ -195,10 +233,10 @@ Stellenbosch, South Africa \\
         hypothesis is rejected, the Holm and Nemenyi post-hoc procedures are used to determine which algorithms are significantly different from
         one another. The Iman-Davenport correction is also aplied to the Friedman test to address overly conservative behaviour.
 
-\section{Results}
+\section{Results} \label{Results}
 
 
-\section{Conclusion}
+\section{Conclusion} \label{Conclusion}
 
 
 \bibliography{refs}

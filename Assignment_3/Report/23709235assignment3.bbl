@@ -31,6 +31,36 @@ Y.~Sun, Z.~Li, X.~Li, and J.~Zhang, ``Classifier selection and ensemble model
 G.~Brown, ``Ensemble learning,'' in {\em Encyclopedia of Machine Learning}
   (C.~Sammut and G.~I. Webb, eds.), Boston, MA: Springer, 2011.
 
+\bibitem{banfeld2007comparison}
+R.~Banfeld, K.~Bowyer, W.~Kegelmeyer, and L.~Hall, ``A comparison of decision
+  tree ensemble creation techniques,'' {\em IEEE Transactions on Pattern
+  Analysis and Machine Intelligence}, vol.~29, pp.~173--180, 2007.
+
+\bibitem{hernandezlobato2013large}
+D.~Hernandez-Lobato, G.~Martinez-Munoz, and A.~Suarez, ``How large should
+  ensembles of classifiers be?,'' {\em Pattern Recognition}, vol.~46,
+  pp.~1323--1336, 2013.
+
+\bibitem{oshiro2012how}
+T.~Oshiro, P.~Perez, and J.~Baranauskas, ``How many trees in a random
+  forest?,'' in {\em International Workshop on Machine Learning and Data Mining
+  in Pattern Recognition}, (Berlin), pp.~154--168, Springer, 2012.
+
+\bibitem{probst2018tune}
+P.~Probst and A.-L. Boulesteix, ``To tune or not to tune the number of trees in
+  a random forest?,'' {\em Journal of Machine Learning Research}, vol.~18,
+  pp.~1--18, 2018.
+
+\bibitem{freeman2015random}
+E.~A. Freeman, G.~G. Moisen, J.~W. Coulston, and B.~T. Wilson, ``Random forests
+  and stochastic gradient boosting for predicting tree canopy cover: comparing
+  tuning processes and model performance,'' {\em Canadian Journal of Forest
+  Research}, vol.~46, no.~3, pp.~323--339, 2015.
+
+\bibitem{huang2016parameter}
+B.~F.~F. Huang and C.~B. Paul, ``The parameter sensitivity of random forests,''
+  {\em BMC Bioinformatics}, vol.~17, p.~331, 2016.
+
 \bibitem{DT_Rokach2010}
 L.~Rokach and O.~Maimon, {\em Classification Trees}, pp.~149--174.
 \newblock Boston, MA: Springer US, 2010.
@@ -82,5 +112,32 @@ J.~D. Kelleher, B.~MacNamee, and A.~D’Arcy, {\em Fundamentals of Machine
 L.~Breiman, J.~H. Friedman, R.~A. Olshen, and C.~J. Stone, {\em Classification
   and Regression Trees}.
 \newblock Wadsworth International Group, 1984.
+
+\bibitem{breiman2001random}
+L.~Breiman, ``Random forests,'' {\em Machine Learning}, vol.~45, no.~1,
+  pp.~5--32, 2001.
+
+\bibitem{amit1997shape}
+Y.~Amit and D.~Geman, ``Shape quantization and recognition with randomized
+  trees,'' {\em Neural Computation}, vol.~9, pp.~1545--1588, 1997.
+
+\bibitem{SUN2024121549}
+Z.~Sun, G.~Wang, P.~Li, H.~Wang, M.~Zhang, and X.~Liang, ``An improved random
+  forest based on the classification accuracy and correlation measurement of
+  decision trees,'' {\em Expert Systems with Applications}, vol.~237,
+  p.~121549, 2024.
+
+\bibitem{scikit-learn}
+F.~Pedregosa, G.~Varoquaux, A.~Gramfort, V.~Michel, B.~Thirion, O.~Grisel,
+  M.~Blondel, P.~Prettenhofer, R.~Weiss, V.~Dubourg, J.~Vanderplas, A.~Passos,
+  D.~Cournapeau, M.~Brucher, M.~Perrot, and E.~Duchesnay, ``Scikit-learn:
+  Machine learning in {P}ython,'' {\em Journal of Machine Learning Research},
+  vol.~12, pp.~2825--2830, 2011.
+
+\bibitem{hastie2001elements}
+T.~Hastie, R.~Tibshirani, and J.~Friedman, {\em The Elements of Statistical
+  Learning}.
+\newblock Springer Series in Statistics, New York, NY, USA: Springer New York
+  Inc., 2001.
 
 \end{thebibliography}
